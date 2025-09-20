@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "author": "Arash Hatami",
+  "name": "mtr.tools Overview",
+  "short_name": "mtr.tools Overview",
+  "version": "1.0.0",
+  "description": "Displays ping statistics for the current mtr.tools session",
+  "homepage_url": "https://github.com/hatamiarash7/mtrtools-overview",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "modal.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png",
+    "192": "icons/icon192.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mtr.tools/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mtrtools-overview@arash-hatami.ir"
+    }
+  }
+}
