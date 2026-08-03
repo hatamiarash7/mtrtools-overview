@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5.1.0
+        uses: actions/checkout@v6.1.0
 
       - name: Zip Extension
         run: zip -qq -r mtrtools-overview.zip . -x "*.git*" "dist/*" ".vscode"
@@ -37,7 +37,7 @@ jobs:
           xpi-path: mtrtools-overview.zip
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           token: ${{ secrets.GH_TOKEN }}
           make_latest: true
